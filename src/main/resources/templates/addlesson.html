@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create a New Lesson</title>
+</head>
+
+<body>
+    <h1>Create a New Lesson</h1>
+
+    <form action="/addLesson" method="post" th:object="${lesson}" onsubmit="handleFormSubmission(event)">
+        <div class="mb-3">
+            <label for="lessonId" class="form-label">Lesson ID</label>
+            <input type="text" class="form-control" th:field="*{lessonId}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="lessonName" class="form-label">Lesson Name</label>
+            <input type="text" class="form-control" th:field="*{lessonName}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="topics" class="form-label">Topics</label>
+            <input type="text" class="form-control" th:field="*{topics}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="link" class="form-label">Link</label>
+            <input type="text" class="form-control" th:field="*{link}" required>
+        </div>
+
+        <!-- Assuming that the Lesson entity has a reference to the Course entity -->
+        <div class="mb-3">
+            <label for="course" class="form-label">Course</label>
+            <select class="form-control" th:field="*{course}" required>
+                <option value="">Select Course</option>
+                <!-- Loop through the list of courses obtained from the controller and display them as options -->
+                <option th:each="course : ${courses}" th:value="${course}" th:text="${course.courseName}"></option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Lesson</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index Page</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+   body {
+            background: url(/images/background.jpg);
+            /* Additional CSS for background */
+            background-size: cover;
+            background-repeat: no-repeat;
+            
+            /* Add more background styles as needed */
+        }
+        h2{
+            text-align: center;
+        }
+        .container{
+            margin:auto;
+            margin-top: 100px;
+            background-color: burlywood;
+            padding: 5px;
+            width: 400px;
+
+        }
+        label{
+            display: block;
+            margin-bottom: 8px;
+        }
+        input{
+            width: 100%;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 7px;
+            margin-bottom: 8px;
+            font-size: 12px;
+            box-sizing: border-box;
+
+        }
+        /*input[type="submit"]{}*/
+        .sub1,.sub2{
+            background-color: yellow;
+            color: black;
+            border-radius: 10px;
+            font-size: 12px;
+            padding: 10px;
+            width: 100px;
+        }
+        input[type="submit"]:hover{
+            background-color: rgb(235, 16, 162);
+            color: white;
+        }
+        .sub1{
+            margin-left: 90px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Your content here -->
+	<div class="container">
+	 	
+    <h2>Leela Learnings</h2>
+    <button type="button" onclick="login()" class="sub1" value="login">Login</button>
+    <button type="button" onclick="signup()" class="sub2" value="signup">Sign Up</button>
+    </div>
+    
+    
+  
+    <!-- Your other content and scripts here -->
+
+    <!-- JavaScript code to handle button clicks -->
+    <script>
+        function login() {
+            // Redirect to the login page (assuming login.html exists)
+            window.location.href = "login";
+        }
+
+        function signup() {
+            // Redirect to the register page (assuming register.html exists)
+            window.location.href = "register";
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
